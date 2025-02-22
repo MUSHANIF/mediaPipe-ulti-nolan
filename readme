@@ -1,0 +1,5 @@
+docker build -t hand-gesture-control .
+docker run --rm --device=/dev/video0 -e DISPLAY=$DISPLAY \
+    -v /tmp/.X11-unix:/tmp/.X11-unix \
+    -v ~/.Xauthority:/root/.Xauthority \
+    hand-gesture-control
